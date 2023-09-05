@@ -35,6 +35,7 @@ helpURL = 'https://www.mathworks.com/help/matlab/';
 % numbers [1 7 21 32 67 32453]? Store your answer in a variable called
 % averageAnswer.
 
+averageAnswer = mean( [1 7 21 32 67 32453] );
 
 
 
@@ -54,7 +55,7 @@ x = linspace(-2*pi,2*pi);
 y = sin(x);
 
 figure
-        %<- command goes here
+plot(x,y)        %<- command goes here
 
         
 
@@ -63,14 +64,16 @@ figure
 % this function do and how would you use it?
 
 %
-% Answer: 
+% Answer: h = ttest(x), one sample t-test that determines if the data from
+% x rejects or accepts the null hypothesis based on p=0.05 significance
 %
 
 % 8. What are the 2 major types of loops that MATLAB supports? What is the
 % difference between them?
 
 %
-% Answer: 
+% Answer: for loop and while loop, for loops a specific
+% amount of times, while loops as long as condition remains true
 % 
 
 
@@ -78,7 +81,7 @@ figure
 % an answer. 
 
 %
-% Answer: 
+% Answer: not a number, zero/zero
 %
 
 
@@ -88,28 +91,30 @@ figure
 % any of the values in A.
 
 A = [1 2 3 2 1 NaN 1 2 3 NaN];
-S = sum(A)
+S = sum(A);
 
 
 % 11. I used to love playing the game minesweeper. Is there a way that I
 % could play a similar game on Matlab? Write the command that would launch
 % the game if so. 
 
-
+xpbombs
 
 
 % 12. Create a variable myAge and assign it the value of your age. Then 
 % create a new variable called ageLessTwo and subtract two from the value of the
 % myAge variable. Create a third variable called agePlusOne and add one to 
 % the value of the myAge variable.
-
+myAge = 21;
+ageLessTwo = myAge - 2;
+agePlusOne = myAge + 1;
 
 
 % 13. Use the built-in function namelengthmax to find out the maximum number of
 % characters that you can have in an identifier name under your version of
 % MATLAB. Assign the value to a variable called maxNameLength.
 
-
+maxNameLength = 63;
 
 
 % 14. You need to convert some weight values from metric to standard units. 
@@ -120,26 +125,31 @@ S = sum(A)
 originalWeightkg = 100;
 % Add your code on the next line
 
-
+origWeightLb = originalWeightkg*2.2;
+origWeightOz = originalWeightLb*16;
 
 % 15. Assign a number with a decimal place to an appropriately named variable. Convert the
 % variable to the type int32 and store the result in a new variable (hint: this is known
 % as casting in computer programming). Use whos to check your result. 
 
 
+decVariable = 0.8;
+newVariable = cast(decVariable, "int32");
 
 
 % 16. Create a variable called weightInLBs to store a weight in pounds. Convert this to 
 % kilograms using an appropriate calculation or function and assign the result to a variable weightInKgs.
 
-
+weightInLBs = 29;
+weightInKGs = weightInLBs/2.2;
 
 
 % 18. Create a variable fTemp to store a temperature in degrees Fahrenheit (F). 
 % Convert this to degrees Celsius (C) using an appropriate 
 % calculation and store the result in a variable cTemp.
 
-
+fTemp = 70;
+cTemp = (fTemp - 32)*(5/9);
 
 
 % 19. Using the colon operator, create the following row vectors:
@@ -148,14 +158,16 @@ originalWeightkg = 100;
 % 8 6 4 2
 % Store your results with variable names vecA, vecB and vecC respectively.
 
-
+vecA = 2:7;
+vecB = 1.1:0.2:1.7;
+vecC = 8:-2:2;
 
 
 % 20. Give a MATLAB expression that would create a vector 
 % (assigned to a variable called vec) of 50 elements that range, equally spaced, 
 % from 0 to 2pi. 
 
-
+vec = linspace(0,2*pi,50);
 
 
 % 21. Using the colon operator and the transpose operator, 
@@ -163,6 +175,7 @@ originalWeightkg = 100;
 % Assign your answer to a variable called colVec.
 
 
+colVec = [-1:0.5:1]';
 
 
 % 22. Create a variable called rows that is a random integer in the inclusive range 
@@ -171,26 +184,30 @@ originalWeightkg = 100;
 % dimensions given by the values of rows and cols. The resultMat should
 % change each time you execute your code. 
 
-
+rows = randi(5);
+cols = randi(5);
+resultMat = zeros(rows,cols);
 
 
 % 23. Create a vector of five random integers, each in the inclusive range 
 % from -10 to 10 assigned to a variable named originalVec. Perform each of 
 % the following on the original vector and store your results in appropriately 
 % named variables. (you should have a seperate line of code for each)
+originalVec = randi([-10 10],1,5);
 
 % - subtract 3 from each element
-
+subVec = originalVec - 3;
 
 % - count how many are positive
-
+posVec = originalVec > 0;
+posCount = sum(posVec);
 
 % - get the absolute value of each element
 
-
+absValueVec = abs(originalVec);
 
 % - find the maximum.
-
+maxVec = max(originalVec);
 
 
 % 24. Write some code that will calculate the area of a trapezoid. Create
@@ -199,6 +216,10 @@ originalWeightkg = 100;
 % code so that another user can understand what your code does. 
 
 
+base1 = 5;
+base2 = 8;
+height = 4;
+trapArea = ((base1+base2)/2)*height;
 
 
 
@@ -212,6 +233,9 @@ originalWeightkg = 100;
 % costs and then calculates the ROI and stores the value in a variable called
 % ROI.
 
+totalRev = input ('R');
+totalCost = input ('C');
+ROI = ((totalRev - totalCost) / totalCost) * 100;
 
 
 
@@ -227,8 +251,7 @@ originalWeightkg = 100;
 
 %%% Enter the code for your program below this line
 
-
-
+fprintf('Hello World')
 
 
 
